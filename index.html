@@ -25,6 +25,23 @@
         <input type="number" name="num_2" id="num_2">
         <input type="number" name="num_3" id="num_3">
         <input type="button" value="Submit" onclick="checkSo()">
+        <br/>
+        <br/>
+        <table>
+            <tr>
+                <th>Điểm đầu kì</th>
+                <th>Điểm giữa kì</th>
+                <th>Điểm cuối kì</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><input type="number" name="" id="mark_1"></td>
+                <td><input type="number" name="" id="mark_2"></td>
+                <td><input type="number" name="" id="mark_3"></td>
+                <td><input type="button" onclick="tinhDiem()" value="Submit"></td>
+            </tr>
+
+        </table>
     </div>
     <div class="main2" style="float: left">
         <p id="result"></p>
@@ -81,6 +98,23 @@
 
 
     }
+    function tinhDiem() {
+        _a = document.getElementById('mark_1').value;
+        _b = document.getElementById('mark_2').value;
+        _c = document.getElementById('mark_3').value;
+
+        average = (_a+_b+_c)/3;
+        if ( 5 <= average < 6.5){
+            document.getElementById('result').innerHTML = "TB";
+        }else if (6.5 <=  average < 8){
+            document.getElementById('result').innerHTML = "Kha"
+        }else if( 8 <= average < 9){
+            document.getElementById('result').innerHTMl = "Gioi"
+        }else{
+            document.getElementById('result').innerHTML = "Yeu";
+        }
+    }
+
 
 </script>
 </body>
