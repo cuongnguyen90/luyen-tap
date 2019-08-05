@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai Tap Luyen Tap Cau Truc</title>
+</head>
+<body>
+<div class="center" >
+    <div class="main" style="float: left">
+        <h3>Nhập vào a và b để kiểm tra :</h3>
+        <input type="number" id="number_a" value="">
+        <input type="number" id="number_b" value="">
+        <input type="button" onclick="result();" value="Submit">
+        <br/>
+        <h3>Nhập vào tuổi để kiểm tra :</h3>
+        <input type="text" name="" id="age">
+        <input type="button" value="Submit" onclick="check()">
+        <br/>
+        <h3>Nhập vào số bất kỳ</h3>
+        <input type="number" name="" id="number">
+        <input type="button" value="Submit" onclick="sosanh()">
+        <br/>
+        <h3>Nhập 3 số nguyên tố bất kì</h3>
+        <input type="number" name="num_1" id="num_1">
+        <input type="number" name="num_2" id="num_2">
+        <input type="number" name="num_3" id="num_3">
+        <input type="button" value="Submit" onclick="checkSo()">
+    </div>
+    <div class="main2" style="float: left">
+        <p id="result"></p>
+    </div>
+
+</div>
+<script>
+    function result() {
+        a = document.getElementById('number_a').value;
+        b = document.getElementById('number_b').value;
+
+        if (a % b == 0){
+            document.getElementById('result').innerHTML = "a chia het cho b !"
+        }else {
+            document.getElementById('result').innerHTML = ' a khong chia het cho b'
+        }
+    }
+    function check() {
+        age = Number(document.getElementById('age').value);
+
+        if (age < 16){
+            document.getElementById('result').innerHTML = "Tuổi của bạn là: "+age+" Không đủ tuổi vào lớp 10";
+        }else{
+            document.getElementById('result').innerHTML = "Bạn đủ tuổi vào lớp 10"
+        }
+    }
+    function sosanh(){
+        a = document.getElementById('number').value;
+        if (a > 0){
+            document.getElementById('result').innerHTML = " Số này lớn hơn 0"
+        }else{
+            document.getElementById('result').innerHTML = " Số này nhỏ hơn 0"
+        }
+    }
+    function checkSo() {
+        num_1 = Number(document.getElementById('num_1').value);
+        num_2 = Number(document.getElementById('num_2').value);
+        num_3 = Number(document.getElementById('num_3').value);
+
+
+        max = num_1;
+        result = document.getElementById('result');
+
+        if (max < num_2){
+            max = num_2;
+            result.innerHTML = max+" la so lon nhat";
+        }else if(max < num_3){
+            max = num_3
+            result.innerHTML = max+" la so lon nhat";
+        }else{
+            result.innerHTML = max+" la so lon nhat";
+        }
+
+
+
+    }
+
+</script>
+</body>
+</html>
