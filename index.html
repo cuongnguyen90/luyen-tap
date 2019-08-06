@@ -42,6 +42,11 @@
             </tr>
 
         </table>
+        <br/>
+        <input type="number" name="" id="doanhso">
+        <input type="button" value="Submit" onclick="tinhHoaHong()">
+        <br/>
+        <input type="number" name="" id="">
     </div>
     <div class="main2" style="float: left">
         <p id="result"></p>
@@ -54,26 +59,26 @@
         b = document.getElementById('number_b').value;
 
         if (a % b == 0){
-            document.getElementById('result').innerHTML = "a chia het cho b !"
+            document.getElementById('result').innerText = "a chia het cho b !"
         }else {
-            document.getElementById('result').innerHTML = ' a khong chia het cho b'
+            document.getElementById('result').innerText = ' a khong chia het cho b'
         }
     }
     function check() {
         age = Number(document.getElementById('age').value);
 
         if (age < 16){
-            document.getElementById('result').innerHTML = "Tuổi của bạn là: "+age+" Không đủ tuổi vào lớp 10";
+            document.getElementById('result').innerText = "Tuổi của bạn là: "+age+" Không đủ tuổi vào lớp 10";
         }else{
-            document.getElementById('result').innerHTML = "Bạn đủ tuổi vào lớp 10"
+            document.getElementById('result').innerText = "Bạn đủ tuổi vào lớp 10"
         }
     }
     function sosanh(){
         a = document.getElementById('number').value;
         if (a > 0){
-            document.getElementById('result').innerHTML = " Số này lớn hơn 0"
+            document.getElementById('result').innerText = " Số này lớn hơn 0"
         }else{
-            document.getElementById('result').innerHTML = " Số này nhỏ hơn 0"
+            document.getElementById('result').innerText = " Số này nhỏ hơn 0"
         }
     }
     function checkSo() {
@@ -87,32 +92,47 @@
 
         if (max < num_2){
             max = num_2;
-            result.innerHTML = max+" la so lon nhat";
+            result.innerText = max+" la so lon nhat";
         }else if(max < num_3){
             max = num_3
-            result.innerHTML = max+" la so lon nhat";
+            result.innerText = max+" la so lon nhat";
         }else{
-            result.innerHTML = max+" la so lon nhat";
+            result.innerText = max+" la so lon nhat";
         }
 
 
 
     }
     function tinhDiem() {
-        _a = document.getElementById('mark_1').value;
-        _b = document.getElementById('mark_2').value;
-        _c = document.getElementById('mark_3').value;
+        _a = parseInt(document.getElementById('mark_1').value);
+        _b = parseInt(document.getElementById('mark_2').value);
+        _c = parseInt(document.getElementById('mark_3').value);
+
+
 
         average = (_a+_b+_c)/3;
-        if ( 5 <= average < 6.5){
-            document.getElementById('result').innerHTML = "TB";
-        }else if (6.5 <=  average < 8){
-            document.getElementById('result').innerHTML = "Kha"
-        }else if( 8 <= average < 9){
-            document.getElementById('result').innerHTMl = "Gioi"
-        }else{
-            document.getElementById('result').innerHTML = "Yeu";
+        console.log(average);
+        if (6.5 > average.toFixed(2) >= 5){
+            document.getElementById('result').innerText = "Diem trung binh : "+average+". Xep loai TB";
+        }else if(8 >average.toFixed(2) >= 6.5){
+            document.getElementById('result').innerText = "Diem trung binh : "+average+". Xep loai Kha";
+        }else if(average.toFixed(2) >= 8){
+            document.getElementById('result').innerText = "Diem trung binh : "+average+". Xep loai Gioi";
+        }else {
+            document.getElementById('result').innerText = "Diem trung binh : "+average+". Xep loai Yeu";
+
         }
+
+    }
+
+    function tinhHoaHong() {
+        _doanhso = document.getElementById('doanhso').value;
+
+        _hoahong = _doanhso*0.1;
+
+        document.getElementById('result').innerText = "Hoa hong cua ban la: "+ _hoahong.toFixed(2);
+
+
     }
 
 
